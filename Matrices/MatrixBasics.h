@@ -21,3 +21,5 @@ class Matrix2
   bool resize
 
 }
+
+// need to add more code, still doing research
