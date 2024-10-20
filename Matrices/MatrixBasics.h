@@ -10,6 +10,7 @@ class Matrix2
   
   Matrix2();
   Matrix2(int nRows, int nCols);
+  Matrix2(int nRows, int nCols, const T *inputData);
   Matrix2(const Matrix2<T>& inputMatrix);
 
   // Destructor
@@ -18,8 +19,31 @@ class Matrix2
 
   // Configuration Methods
 
-  bool resize
+  bool resize(int numRows, int numCols);
 
+  // Element Access methods
+
+  T GetElement(int row, int col);
+  bool SetElement(int row, int col, T elementvalue)
+  int GetNumRows();
+  int GetColRows();
+
+  // Overloading
+  bool operator== (const Matrix2<T> rhs);
+
+  // Overloading the other operators (+, -, * operations)
+
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const U& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const U& rhs);
+
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const U& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const U& rhs);
+
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const U& lhs, const Matrix2<U>& rhs);
+  template <class U> friend Matrix2<U> operator+ (const Matrix2<U>& lhs, const U& rhs);
 }
 
 // need to add more code, still doing research
